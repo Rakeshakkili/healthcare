@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const doctors = [
     { id: 1, name: 'Dr. Sameer', specialization: 'Dermatologist', availability: '9 AM - 11 AM' },
     { id: 2, name: 'Dr. Rakesh', specialization: 'Cardiologist', availability: '10 AM - 12 AM' },
