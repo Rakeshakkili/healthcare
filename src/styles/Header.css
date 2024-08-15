@@ -1,0 +1,48 @@
+
+.header {
+  width: 100%;
+  background-color: #fff;
+  padding: 20px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0; /* Ensure header is aligned to the left */
+  z-index: 1000;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px; /* Adjust as needed */
+  margin: 0 auto; /* Center container horizontally */
+  padding: 0 20px; /* Add padding to the container */
+}
+
+.logo a {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #007BFF;
+  text-decoration: none; /* Ensure no underline */
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+.nav a {
+  font-size: 1.1rem;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-decoration: none; /* Ensure no underline */
+}
+
+.nav a:hover {
+  background-color: #007BFF;
+  color: #fff;
+}

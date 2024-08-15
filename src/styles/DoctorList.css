@@ -1,0 +1,47 @@
+.doctors-list {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.doctors-list h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.doctors-list ul {
+    list-style-type: none;
+}
+
+.doctors-list li {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.doctors-list h3 {
+    margin-bottom: 10px;
+}
+
+.doctors-list p {
+    margin-bottom: 10px;
+}
+
+.doctors-list button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.doctors-list button:hover {
+    background-color: #0056b3;
+}

@@ -1,0 +1,71 @@
+/* DoctorLogin.css */
+
+.auth-container.doctor {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f5f5f5; /* Light grey background */
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.auth-form.doctor h2 {
+    text-align: center;
+    color: #333; /* Dark grey text color */
+    margin-bottom: 20px;
+}
+
+.form-group.doctor {
+    margin-bottom: 15px;
+}
+
+label.doctor {
+    display: block;
+    margin-bottom: 5px;
+    color: #444; /* Slightly lighter grey */
+    font-weight: 600;
+}
+
+input[type="text"].doctor,
+input[type="email"].doctor,
+input[type="password"].doctor {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc; /* Neutral grey border */
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #fff; /* White background */
+}
+
+input[type="text"].doctor:focus,
+input[type="email"].doctor:focus,
+input[type="password"].doctor:focus {
+    border-color: #555; /* Darker grey focus */
+    outline: none;
+}
+
+.btn-primary.doctor {
+    width: 100%;
+    padding: 10px;
+    background-color: #333; /* Dark grey background */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-primary.doctor:hover {
+    background-color: #111;
+}
+
+.toggle-link.doctor {
+    text-align: center;
+    margin-top: 15px;
+    color: #333;
+    cursor: pointer;
+}
+
+.toggle-link.doctor:hover {
+    text-decoration: underline;
+}
