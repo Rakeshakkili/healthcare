@@ -1,27 +1,20 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { loginAPICall } from "../services/AuthService"; 
+import { loginAPICall } from "../services/AuthService";
 
 function DoctorLogin() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [licenseNumber, setLicenseNumber] = useState("");
+    const [medLic, setMedLic] = useState(""); // Medical License Number
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // Handle login using loginAPICall
         try {
-            const loginObj = {
-                email,
-                password,
-                licenseNumber, // Include license number for doctor login
-                role: "doctor",
-            };
-            const response = await loginAPICall(email, password);
+            const response = await loginAPICall(email, password, "doctor", medLic);
             if (response.data.success) {
-                navigate("/doctor-dashboard"); // Replace with the appropriate route
+                navigate("/doctor-dashboard"); 
             } else {
                 alert("Login failed. Please check your credentials.");
             }
@@ -65,8 +58,8 @@ function DoctorLogin() {
                             placeholder="Enter your license number"
                             className="doctor"
                             required
-                            value={licenseNumber}
-                            onChange={(e) => setLicenseNumber(e.target.value)}
+                            value={medLic}
+                            onChange={(e) => setMedLic(e.target.value)}
                         />
                     </div>
                     <button type="submit" className="btn-primary doctor">Login</button>

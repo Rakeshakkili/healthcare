@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { registerAPICall, loginAPICall } from "../services/AuthService";
 
+//const API_BASE_URL = "http://localhost:8080";
+
 function PatientLogin() {
     const [showRegistration, setShowRegistration] = useState(false);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [fullName, setFullName] = useState("");
-    const [phoneNumber, setPhoneNumber] = useState("");
+    const [name, setName] = useState(""); 
+    const [number, setNumber] = useState(""); 
     const navigate = useNavigate();
 
     const toggleForm = () => {
@@ -23,17 +25,12 @@ function PatientLogin() {
                 const registerObj = {
                     email,
                     password,
-                    fullName,
-                    phoneNumber,
-                    role: "patient",
+                    name, 
+                    number, 
                 };
-                const response = await registerAPICall(registerObj);
-                if (response.data.success) {
-                    alert("Registration successful!");
-                    setShowRegistration(false);
-                } else {
-                    alert("Registration failed. Please try again.");
-                }
+                const response = await registerAPICall(registerObj, "patient");
+                alert("Registration successful!");
+                setShowRegistration(false);
             } catch (error) {
                 console.error("Registration failed", error);
                 alert("Registration failed. Please try again.");
@@ -41,9 +38,8 @@ function PatientLogin() {
         } else {
             // Handle login using loginAPICall
             try {
-                const response = await loginAPICall(email, password);
+                const response = await loginAPICall(email, password, "patient");
                 if (response.data.success) {
-                    // Redirect to doctors list page after successful login
                     navigate("/doctors");
                 } else {
                     alert("Login failed. Please check your credentials.");
@@ -85,14 +81,14 @@ function PatientLogin() {
                     {showRegistration && (
                         <>
                             <div className="form-group patient">
-                                <label className="patient">Full Name</label>
+                                <label className="patient">Name</label>
                                 <input
                                     type="text"
-                                    placeholder="Enter your full name"
+                                    placeholder="Enter your name"
                                     className="patient"
                                     required
-                                    value={fullName}
-                                    onChange={(e) => setFullName(e.target.value)}
+                                    value={name}
+                                    onChange={(e) => setName(e.target.value)}
                                 />
                             </div>
                             <div className="form-group patient">
@@ -102,8 +98,8 @@ function PatientLogin() {
                                     placeholder="Enter your phone number"
                                     className="patient"
                                     required
-                                    value={phoneNumber}
-                                    onChange={(e) => setPhoneNumber(e.target.value)}
+                                    value={number}
+                                    onChange={(e) => setNumber(e.target.value)}
                                 />
                             </div>
                         </>

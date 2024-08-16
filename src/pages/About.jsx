@@ -15,8 +15,8 @@ function About() {
       {/* Company Overview Section */}
       <section className="company-overview">
         <div className="container">
-          <img src="/path-to-company-image.jpg" alt="Our Company" />
-          <div className="content">
+          <img src="/assets/company-img.jpg" alt="Company Image" />
+        <div className="content">
             <h2>Who We Are</h2>
             <p>
               At HealthCare, we are dedicated to providing exceptional medical services with compassion and care. Our team of professionals is committed to your well-being, offering a wide range of services tailored to your needs.
