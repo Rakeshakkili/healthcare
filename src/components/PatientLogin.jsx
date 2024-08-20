@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import AuthService from '../services/AuthService';
 import { useNavigate } from 'react-router-dom';
+import "../styles/LoginAndRegister.css";
 
 const PatientLogin = () => {
   const [email, setEmail] = useState('');
@@ -13,7 +14,7 @@ const PatientLogin = () => {
     try {
       const response = await AuthService.loginPatient(email, password);
       alert(response);  // Display success message
-      navigate('/doctors-list');  // Redirect to doctors list page
+      navigate('/doctors-list');  
     } catch (err) {
       setError(err.message);
     }

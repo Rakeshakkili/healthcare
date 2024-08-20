@@ -1,6 +1,5 @@
-
 .contact {
-  padding: 100px 0;
+  padding: 100px 20px;
   background-color: #fff;
   text-align: center;
 }
@@ -22,6 +21,8 @@
   flex-direction: column;
   align-items: center;
   gap: 30px;
+  max-width: 800px;
+  margin: 50px auto;
 }
 
 .contact-details h3 {

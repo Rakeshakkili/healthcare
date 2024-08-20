@@ -3,10 +3,15 @@ import '../styles/Services.css';
 
 function Services(){
     const services = [
-        { title: 'Dermatology', descriptioin: 'Expert skin ccare services.'},
+        { title: 'Dermatology', descriptioin: 'Expert skin care services.'},
         { title: 'Pediatrics', descriptioin: 'Comperhensive care for children.'},
         { title: 'Cardilogy', descriptioin: 'Heart health specialist.'},
-        //we can add more services as needed
+        { title: 'Audiologist', descriptioin: 'Hearing Care Expert'},
+        { title: 'Gynecologist', descriptioin: 'Women’s Health Doctor'},
+        { title: 'Orthopedic Surgeon', descriptioin: 'Bone & Joint Specialist'},
+        { title: 'Outdoor Checkup', descriptioin: 'Mobile Health Service'},
+        { title: 'Ambulance Service', descriptioin: 'Emergency Transport'},
+        { title: 'Medicine and Pharmacy', descriptioin: 'Medication & Advice'},   
     ];
 
     return (

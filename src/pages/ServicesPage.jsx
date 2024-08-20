@@ -16,7 +16,30 @@ function ServicesPage() {
             title: 'Cardiology',
             description: 'Our cardiologists are experts in diagnosing and treating heart conditions, offering personalized care for each patient.',
         },
-        // Add more detailed services as needed   
+        {
+            title: 'Audiologist',
+            description: 'Comprehensive hearing evaluations and tailored solutions to enhance your auditory health.'
+        },
+        {
+            title: 'Gynecologist',
+            description: 'Specialized womens health services focusing on preventive care and personalized treatments'
+        },
+        {
+            title: 'Orthopedic Surgeon',
+            description: 'Expert care for musculoskeletal issues, from diagnosis to advanced surgical solutions.'
+        },
+        {
+            title: 'Outdoor Checkup',
+            description: 'Convenient and thorough health checkups at your location for added comfort and accessibility.'
+        },
+        {
+            title: 'Ambulance Service',
+            description: '24/7 emergency transportation with skilled professionals ensuring timely and safe care.'
+        },
+        {
+           title: 'Medicine and Pharmacy',
+           description: 'Reliable access to prescribed medications and expert pharmaceutical advice for your health needs.'
+        }  
     ];
 
     return (

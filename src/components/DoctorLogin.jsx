@@ -13,7 +13,7 @@ const DoctorLogin = () => {
     try {
       const response = await AuthService.loginDoctor(email, password);
       alert(response);  // Display success message
-      navigate('/doctor-dashboard');  // Redirect to doctor's dashboard
+      navigate('/doctor-dashboard');
     } catch (err) {
       setError(err.message);
     }

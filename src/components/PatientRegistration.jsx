@@ -17,7 +17,7 @@ const PatientRegistration = () => {
     try {
       const response = await AuthService.registerPatient(patient);
       alert(response);  // Display success message
-      navigate('/patient-login');  // Redirect to login page after successful registration
+      navigate('/patient-login');  
     } catch (err) {
       setError(err.message);
     }

@@ -1,4 +1,4 @@
-
+/* Header Styles */
 .header {
   width: 100%;
   background-color: #fff;
@@ -14,24 +14,22 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px; /* Adjust as needed */
-  margin: 0 auto; /* Center container horizontally */
-  padding: 0 20px; /* Add padding to the container */
+  max-width: 1500px; 
+  margin: 0 auto; 
+  padding: 0 20px; 
 }
 
 .logo a {
   font-size: 1.8rem;
   font-weight: bold;
   color: #007BFF;
-  text-decoration: none; /* Ensure no underline */
+  text-decoration: none; 
 }
 
 .nav ul {
   list-style: none;
   display: flex;
-  gap: 30px;
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
+  gap: 0px;
 }
 
 .nav a {
@@ -39,10 +37,84 @@
   padding: 8px 16px;
   border-radius: 4px;
   transition: background-color 0.3s ease, color 0.3s ease;
-  text-decoration: none; /* Ensure no underline */
+  text-decoration: none;
 }
 
 .nav a:hover {
-  background-color: #007BFF;
-  color: #fff;
+  color: #1e28e9;
+  text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .header .container {
+    padding: 0 15px;
+  }
+
+  .logo a {
+    font-size: 1.6rem;
+  }
+
+  .nav a {
+    font-size: 1rem;
+    padding: 6px 14px;
+  }
+}
+
+@media (max-width: 992px) {
+  .header .container {
+    padding: 0 10px;
+  }
+
+  .logo a {
+    font-size: 1.4rem;
+  }
+
+  .nav {
+    display: none; /* Hide the nav on smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .header .container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 10px;
+  }
+
+  .logo a {
+    font-size: 1.4rem;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav a {
+    font-size: 1rem;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .header .container {
+    padding: 0 5px;
+  }
+
+  .logo a {
+    font-size: 1.2rem;
+  }
+
+  .nav a {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
 }
