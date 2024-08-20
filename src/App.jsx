@@ -8,6 +8,7 @@ import DoctorLogin from "./components/DoctorLogin";
 import DoctorsList from "./components/DoctorsList";
 import Header from "./components/Header";
 import Footer from './components/Footer';
+import PatientRegistration from "./components/PatientRegistration";
 
 
 function App() {
@@ -19,9 +20,10 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/patient-register" element={<PatientRegistration />} />
         <Route path="/patient-login" element={<PatientLogin />} />
         <Route path="/doctor-login" element={<DoctorLogin />} />
-        <Route path="/doctorslist" element={<DoctorsList />} />
+        <Route path="/doctors-list" element={<DoctorsList />} />
       </Routes>
       <Footer />
     </Router>

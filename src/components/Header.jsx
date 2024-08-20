@@ -16,6 +16,7 @@ function Header() {
                         <li><Link to="/services">Services</Link></li>
                         <li><Link to="/contact">Contact Us</Link></li>
                         <li><Link to="/patient-login">Patient Login</Link></li>
+                        <li><Link to="patient-register">PatientRegistration</Link></li>
                         <li><Link to="/doctor-login">Doctor Login</Link></li>
                     </ul>
                 </nav>
