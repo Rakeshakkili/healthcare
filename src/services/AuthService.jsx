@@ -1,13 +1,13 @@
 import axios from "axios";
-const API_BASE_URL = "http://localhost:8080/patient";
+const API_BASE_URL = "http://localhost:8080/patient"; 
 
-// Function to handle registration
 export const registerAPICall = async (registerObj, role) => {
     try {
+        const queryParams = new URLSearchParams(registerObj).toString();
         const endpoint = role === "doctor" 
-            ? `${API_BASE_URL}/doctor/register` 
-            : `${API_BASE_URL}/patient/register`;
-        const response = await axios.post(endpoint, registerObj); 
+            ? `${API_BASE_URL}/doctor/register?${queryParams}` 
+            : `${API_BASE_URL}/patient/register?${queryParams}`;
+        const response = await axios.get(endpoint);
         return response.data;
     } catch (error) {
         console.error("Error during registration:", error);
@@ -15,13 +15,13 @@ export const registerAPICall = async (registerObj, role) => {
     }
 };
 
-// Function to handle login
-export const loginAPICall = async (email, password, role, medLic = "") => {
+export const loginAPICall = async (email, password, role) => {
     try {
+        const queryParams = new URLSearchParams({ email, password }).toString();
         const endpoint = role === "doctor" 
-            ? `${API_BASE_URL}/doctor/login` 
-            : `${API_BASE_URL}/patient/login`;
-        const response = await axios.post(endpoint, { email, password, medLic }); 
+            ? `${API_BASE_URL}/doctor/login?${queryParams}` 
+            : `${API_BASE_URL}/patient/login?${queryParams}`;
+        const response = await axios.get(endpoint);
         return response.data;
     } catch (error) {
         console.error("Error during login:", error);

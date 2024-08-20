@@ -2,14 +2,12 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { registerAPICall, loginAPICall } from "../services/AuthService";
 
-//const API_BASE_URL = "http://localhost:8080";
-
 function PatientLogin() {
     const [showRegistration, setShowRegistration] = useState(false);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [name, setName] = useState(""); 
-    const [number, setNumber] = useState(""); 
+    const [name, setName] = useState("");
+    const [number, setNumber] = useState("");
     const navigate = useNavigate();
 
     const toggleForm = () => {
@@ -20,27 +18,29 @@ function PatientLogin() {
         e.preventDefault();
 
         if (showRegistration) {
-            // Handle registration using registerAPICall
             try {
                 const registerObj = {
                     email,
                     password,
-                    name, 
-                    number, 
+                    name,
+                    number,
                 };
                 const response = await registerAPICall(registerObj, "patient");
-                alert("Registration successful!");
-                setShowRegistration(false);
+                if (response && response.success) {
+                    alert("Registration successful!");
+                    setShowRegistration(false);
+                } else {
+                    alert("Registration failed. Please try again.");
+                }
             } catch (error) {
                 console.error("Registration failed", error);
                 alert("Registration failed. Please try again.");
             }
         } else {
-            // Handle login using loginAPICall
             try {
                 const response = await loginAPICall(email, password, "patient");
-                if (response.data.success) {
-                    navigate("/doctors");
+                if (response.success) {
+                    navigate("/doctorslist");
                 } else {
                     alert("Login failed. Please check your credentials.");
                 }
